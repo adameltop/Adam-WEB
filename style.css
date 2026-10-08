@@ -456,7 +456,145 @@ footer {
     font-weight: bold;
     font-size: 20px;
 }
+/* =========================
+   PRICING
+========================= */
 
+.pricing {
+    padding: 120px 8%;
+    text-align: center;
+}
+
+.pricing h2 {
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 1;
+    margin: 20px 0 70px;
+}
+
+.pricing h2 span {
+    opacity: 0.45;
+}
+
+.pricing-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: left;
+}
+
+.pricing-card {
+    position: relative;
+    padding: 45px 35px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px;
+    background: rgba(255,255,255,0.03);
+    transition: 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255,255,255,0.35);
+}
+
+.pricing-card.featured {
+    border: 1px solid rgba(255,255,255,0.5);
+    transform: translateY(-10px);
+}
+
+.pricing-card.featured:hover {
+    transform: translateY(-18px);
+}
+
+.plan-name {
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.pricing-card h3 {
+    font-size: 52px;
+    margin: 0;
+    line-height: 1;
+}
+
+.pricing-card h3 span {
+    font-size: 18px;
+    opacity: 0.6;
+}
+
+.price-period {
+    font-size: 14px;
+    opacity: 0.55;
+    margin: 12px 0 30px;
+}
+
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 35px;
+}
+
+.pricing-card li {
+    padding: 10px 0;
+    font-size: 15px;
+    opacity: 0.8;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.pricing-btn {
+    display: block;
+    text-align: center;
+    padding: 14px 20px;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.pricing-btn:hover {
+    background: white;
+    color: black;
+}
+
+.popular {
+    position: absolute;
+    top: -13px;
+    right: 25px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: white;
+    color: black;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.domain-note {
+    margin-top: 35px;
+    font-size: 13px;
+    opacity: 0.5;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+
+    .pricing-card.featured {
+        transform: none;
+    }
+
+    .pricing-card.featured:hover {
+        transform: translateY(-8px);
+    }
+}
 
 @media (max-width: 900px) {
 
