@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#09090b">
+    <title>Admin — ADAM WEB</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<!-- Sign in -->
+<main class="login" id="loginView" hidden>
+    <form id="loginForm" class="login-card">
+        <p class="brand">ADAM<span>WEB</span></p>
+        <h1>Admin</h1>
+        <label for="password">Password</label>
+        <input type="password" id="password" autocomplete="current-password" required autofocus>
+        <p class="error" id="loginError" role="alert"></p>
+        <button type="submit" class="btn primary">Sign in</button>
+    </form>
+</main>
+
+<!-- Dashboard -->
+<div class="app" id="appView" hidden>
+
+    <header class="top">
+        <p class="brand">ADAM<span>WEB</span> <em>Admin</em></p>
+        <div class="top-actions">
+            <a class="btn" href="/api/admin/export.csv">Export CSV</a>
+            <button class="btn" id="logoutBtn" type="button">Sign out</button>
+        </div>
+    </header>
+
+    <p class="notice" id="gatewayNotice" hidden>Card payments aren't switched on yet. Orders are saved here, but no card is charged. See README to connect Paymob.</p>
+    <p class="notice warn" id="domainNotice" hidden></p>
+    <p class="notice warn" id="unmatchedNotice" hidden></p>
+
+    <section class="stats" id="stats"></section>
+
+    <nav class="tabs" role="tablist">
+        <button role="tab" class="tab active" data-tab="orders" aria-selected="true">Orders</button>
+        <button role="tab" class="tab" data-tab="customers" aria-selected="false">Customers</button>
+    </nav>
+
+    <section id="ordersTab">
+        <div class="filters">
+            <input type="search" id="search" placeholder="Search name, email, phone, business, domain, reference" aria-label="Search orders">
+            <select id="statusFilter" aria-label="Filter by status">
+                <option value="">All statuses</option>
+                <option value="in_progress">In progress</option>
+                <option value="active">Active</option>
+                <option value="awaiting_payment">Waiting for payment</option>
+                <option value="payment_failed">Payment failed</option>
+                <option value="cancelled">Cancelled</option>
+            </select>
+        </div>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Customer</th><th>Plan</th><th>Domain</th><th class="num">Monthly</th>
+                        <th class="num">Paid so far</th><th>Status</th><th>Created</th>
+                    </tr>
+                </thead>
+                <tbody id="ordersBody"></tbody>
+            </table>
+        </div>
+        <p class="empty" id="ordersEmpty" hidden>No orders yet. They'll appear here as soon as someone checks out.</p>
+    </section>
+
+    <section id="customersTab" hidden>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Customer</th><th>Business</th><th>Phone</th><th class="num">Orders</th><th class="num">Active monthly</th><th class="num">Paid so far</th></tr>
+                </thead>
+                <tbody id="customersBody"></tbody>
+            </table>
+        </div>
+        <p class="empty" id="customersEmpty" hidden>No customers yet.</p>
+    </section>
+
+</div>
+
+<!-- Order detail -->
+<aside class="drawer" id="drawer" hidden aria-label="Order details">
+    <div class="drawer-panel">
+        <button class="close" id="closeDrawer" type="button" aria-label="Close">✕</button>
+        <div id="drawerBody"></div>
+    </div>
+</aside>
+
+<script src="admin.js"></script>
+</body>
+</html>

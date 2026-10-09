@@ -1,0 +1,299 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080808;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+header {
+    height: 80px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #252525;
+    position: sticky;
+    top: 0;
+    background: #080808ee;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 900;
+    font-style: italic;
+}
+
+.logo span {
+    color: #aaa;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+nav a {
+    color: #999;
+}
+
+.join,
+.button {
+    background: white;
+    color: black !important;
+    padding: 13px 20px;
+}
+
+.hero {
+    min-height: 750px;
+    padding: 100px 7%;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(90deg, #080808 25%, #08080877),
+        radial-gradient(circle at 75% 45%, #555 0, #181818 25%, #080808 55%);
+}
+
+.tag {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #777;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(65px, 10vw, 150px);
+    line-height: .82;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: -7px;
+    max-width: 900px;
+}
+
+.hero h1 span {
+    display: block;
+    color: #777;
+}
+
+.hero-content > p:not(.tag) {
+    max-width: 480px;
+    color: #888;
+    margin: 40px 0;
+    line-height: 1.7;
+}
+
+.button {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.numbers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid #252525;
+    border-bottom: 1px solid #252525;
+}
+
+.numbers div {
+    padding: 40px;
+    border-right: 1px solid #252525;
+}
+
+.numbers strong {
+    font-size: 45px;
+    display: block;
+}
+
+.numbers span {
+    color: #777;
+    font-size: 12px;
+}
+
+.programs,
+.pricing {
+    padding: 120px 7%;
+    border-bottom: 1px solid #252525;
+}
+
+.programs h2,
+.pricing h2,
+.coaches h2 {
+    font-size: clamp(45px, 7vw, 90px);
+    line-height: .9;
+    font-style: italic;
+    letter-spacing: -5px;
+    margin-bottom: 70px;
+}
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.program-grid article {
+    padding: 35px;
+    border: 1px solid #252525;
+    min-height: 300px;
+}
+
+.program-grid span {
+    color: #555;
+}
+
+.program-grid h3 {
+    font-size: 35px;
+    font-style: italic;
+    margin-top: 100px;
+}
+
+.program-grid p {
+    color: #777;
+    margin-top: 10px;
+}
+
+.coaches {
+    padding: 120px 7%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    border-bottom: 1px solid #252525;
+}
+
+.coach-list > div {
+    padding: 25px 0;
+    border-bottom: 1px solid #252525;
+}
+
+.coach-list strong {
+    color: #555;
+}
+
+.coach-list h3 {
+    font-size: 28px;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.coach-list span {
+    color: #777;
+    font-size: 13px;
+}
+
+.price-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.price-grid article {
+    border: 1px solid #252525;
+    padding: 35px;
+}
+
+.price-grid .featured {
+    background: white;
+    color: black;
+}
+
+.price-grid h3 {
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.price-grid strong {
+    display: block;
+    font-size: 40px;
+    margin-top: 45px;
+}
+
+.price-grid span {
+    color: #777;
+}
+
+.price-grid p {
+    margin: 35px 0;
+    color: #777;
+    line-height: 2;
+}
+
+.price-grid a {
+    font-size: 12px;
+    border-bottom: 1px solid currentColor;
+}
+
+.join-section {
+    text-align: center;
+    padding: 150px 7%;
+    border-bottom: 1px solid #252525;
+}
+
+.join-section h2 {
+    font-size: clamp(50px, 8vw, 110px);
+    line-height: .85;
+    font-style: italic;
+    letter-spacing: -5px;
+    margin-bottom: 50px;
+}
+
+footer {
+    padding: 40px 7%;
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    font-size: 11px;
+}
+
+@media(max-width:700px) {
+
+    nav a:not(.join) {
+        display: none;
+    }
+
+    .hero {
+        padding: 80px 5%;
+    }
+
+    .numbers,
+    .program-grid,
+    .price-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .numbers div {
+        border-bottom: 1px solid #252525;
+    }
+
+    .programs,
+    .pricing,
+    .coaches {
+        padding: 80px 5%;
+    }
+
+    .coaches {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

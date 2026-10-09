@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#09090b">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Pay for your website — ADAM WEB</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="checkout-page">
+
+<header class="navbar">
+    <a href="index.html" class="logo">ADAM<span>WEB</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav">☰</button>
+    <nav id="nav" aria-label="Main">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#process">Process</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact" class="nav-contact">Start a Project</a>
+    </nav>
+</header>
+
+<main class="checkout">
+    <section class="confirmation" aria-live="polite">
+        <div class="confirm-icon" id="payIcon" aria-hidden="true">…</div>
+        <h2 id="payTitle">Loading your order…</h2>
+        <p class="confirm-lead" id="payText"></p>
+
+        <dl class="confirm-details" id="payDetails" hidden></dl>
+
+        <p class="form-banner" id="payError" role="alert" hidden></p>
+
+        <div class="confirm-actions">
+            <button type="button" class="btn btn-white" id="payBtn" hidden>Pay by card</button>
+        </div>
+        <p class="hint" id="payHint" hidden>You'll enter your card on Paymob's secure payment page. Your card details never touch this website.</p>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-logo">ADAM<span>WEB</span></div>
+    <p>Modern websites for businesses.</p>
+    <span>© <span id="year"></span> ADAM WEB</span>
+</footer>
+
+<script src="script.js"></script>
+<script src="pay.js"></script>
+</body>
+</html>
